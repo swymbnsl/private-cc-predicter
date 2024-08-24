@@ -1,6 +1,5 @@
 import { Roboto } from "next/font/google"
 import "./globals.css"
-import { CssBaseline } from "@mui/material"
 import { ThemeProvider } from "@/context/theme"
 
 const inter = Roboto({
@@ -16,7 +15,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <CssBaseline />
       <body suppressHydrationWarning={true} className={inter.className}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

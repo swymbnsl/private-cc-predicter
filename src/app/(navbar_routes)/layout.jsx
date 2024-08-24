@@ -16,8 +16,10 @@ export default function layout({ children }) {
   return (
     <>
       <ThemeProvider theme={darkTheme}>
-        <Sidebar />
-        {children}
+        <div className="h-full flex w-full">
+          <Sidebar />
+          {children}
+        </div>
       </ThemeProvider>
     </>
   )

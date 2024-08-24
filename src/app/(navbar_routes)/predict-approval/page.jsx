@@ -14,30 +14,20 @@ export default function page() {
 
   return (
     <>
-      <div
-        className={
-          (isLightTheme ? "bg-[#EFEFEF]" : "bg-[#09090a]") +
-          " h-[100vh] w-full flex"
-        }
-      >
-        <div className="h-full w-1/6"></div>
-        <div className="w-5/6 p-5 flex flex-col gap-3">
-          <div
-            className={`flex flex-col gap-5 ${cardBgColor} items-center text-${textColor} h-full rounded-2xl shadow-black/20 p-5 shadow-lg w-[40%]`}
-          >
-            <div className="flex flex-col gap-1 w-full">
-              <span className="text-2xl font-bold w-full">
-                Predict Approval
-              </span>
-              <div className="w-full h-[2px] bg-[#cfcfcf] rouded-full"></div>
-            </div>
-            <Form
-              input={input}
-              setInput={setInput}
-              textColor={textColor}
-              isLightTheme={isLightTheme}
-            />
+      <div className="p-5 flex flex-col gap-3 w-full">
+        <div
+          className={`flex flex-col gap-5 ${cardBgColor} items-center text-${textColor} h-full rounded-2xl shadow-black/20 p-5 shadow-lg w-[490px]`}
+        >
+          <div className="flex flex-col gap-1 w-full">
+            <span className="text-2xl font-bold w-full">Predict Approval</span>
+            <div className="w-full h-[2px] bg-[#cfcfcf] rouded-full"></div>
           </div>
+          <Form
+            input={input}
+            setInput={setInput}
+            textColor={textColor}
+            isLightTheme={isLightTheme}
+          />
         </div>
       </div>
     </>

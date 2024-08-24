@@ -21,9 +21,10 @@ export default function Sidebar() {
 
   return (
     <div
+      id="sidebar"
       className={
         (isLightTheme ? "bg-white" : "bg-[#09090a]") +
-        " w-1/6 fixed p-5 h-full flex flex-col border-white/20 border-r-[1px] shadow-black/20 shadow-lg stroke-white stroke-2"
+        " min-w-[250px] p-5 h-full flex flex-col border-white/20 border-r-[1px] shadow-black/20 shadow-lg stroke-white stroke-2"
       }
     >
       <div className="flex items-center gap-3">
