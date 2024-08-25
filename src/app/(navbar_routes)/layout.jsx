@@ -7,9 +7,25 @@ import { ThemeContext } from "@/context/theme"
 export default function layout({ children }) {
   const { isLightTheme } = useContext(ThemeContext)
 
+  const customColors = {
+    dark: { 500: "#C8BCF6" },
+    light: {
+      500: "#7650FF",
+    },
+  }
+
   const darkTheme = createTheme({
     palette: {
       mode: isLightTheme ? "light" : "dark",
+      ...(isLightTheme
+        ? {
+            // palette values for light mode
+            primary: customColors.light,
+          }
+        : {
+            // palette values for dark mode
+            primary: customColors.dark,
+          }),
     },
   })
 

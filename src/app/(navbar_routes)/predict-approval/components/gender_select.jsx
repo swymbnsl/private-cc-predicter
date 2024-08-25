@@ -21,25 +21,25 @@ export default function GenderSelect({
           setInput((prev) => {
             return {
               ...prev,
-              ["gender"]: "male",
+              ["gender"]: 1,
             }
           })
         }
         className={
-          (input.gender == "male"
+          (input.gender == 1
             ? `bg-${selectedBgColor} ${selectedBorderColor} border-[2.5px]`
             : "border-transparent  border-[2.5px]") +
           ` h-[100px] w-[45%] rounded-2xl flex items-center p-3 gap-3 hover:cursor-pointer`
         }
       >
         <MaleLogo
-          color={input.gender == "male" ? selectedIconColor : textColor}
+          color={input.gender == 1 ? selectedIconColor : textColor}
           height="40px"
           width="40px"
         />
         <span
           className={
-            (input.gender == "male" ? `${selectedTextColor}` : textColor) +
+            (input.gender == 1 ? `${selectedTextColor}` : textColor) +
             " text-2xl font-bold"
           }
         >
@@ -51,25 +51,25 @@ export default function GenderSelect({
           setInput((prev) => {
             return {
               ...prev,
-              ["gender"]: "female",
+              ["gender"]: 0,
             }
           })
         }
         className={
-          (input.gender == "female"
+          (input.gender == 0
             ? `bg-${selectedBgColor} ${selectedBorderColor} border-[2.5px]`
             : "border-transparent  border-[2.5px]") +
           ` h-[100px] w-[45%] rounded-2xl flex items-center p-3 gap-3 hover:cursor-pointer`
         }
       >
         <FemaleLogo
-          color={input.gender == "female" ? selectedIconColor : textColor}
+          color={input.gender == 0 ? selectedIconColor : textColor}
           height="40px"
           width="40px"
         />
         <span
           className={
-            (input.gender == "female" ? `${selectedTextColor}` : textColor) +
+            (input.gender == 0 ? `${selectedTextColor}` : textColor) +
             " text-2xl font-bold"
           }
         >
