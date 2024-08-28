@@ -17,6 +17,8 @@ import { IndianRupee } from "lucide-react"
 import PrimaryButton from "@/components/button"
 
 export default function Form({
+  isPredicting,
+  buttonDisabled,
   predictApproval,
   textColor,
   isLightTheme,
@@ -47,7 +49,7 @@ export default function Form({
   }
 
   return (
-    <div className=" flex w-full flex-col gap-5">
+    <div className="flex min-w-[490px] flex-col gap-5">
       <GenderSelect
         textColor={textColor}
         isLightTheme={isLightTheme}
@@ -141,6 +143,7 @@ export default function Form({
       <div className="flex w-full justify-between">
         <div className="w-[48%]">
           <TextField
+            fullWidth
             sx={roundEdgesSx}
             InputProps={{
               inputProps: {
@@ -280,10 +283,10 @@ export default function Form({
       <PrimaryButton
         isLightTheme={isLightTheme}
         clickFunction={predictApproval}
-        disabled={false}
+        disabled={buttonDisabled}
         width="100%"
         height="40px"
-        buttonText="Predict"
+        buttonText={isPredicting ? "Predicting..." : "Predict"}
       />
     </div>
   )

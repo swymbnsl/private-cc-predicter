@@ -1,8 +1,8 @@
-import { Roboto } from "next/font/google"
+import { Montserrat } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/context/theme"
 
-const inter = Roboto({
+const montserrat = Montserrat({
   weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
 })
@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={inter.className}>
+      <body suppressHydrationWarning={true} className={montserrat.className}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
