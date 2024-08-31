@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import FemaleLogo from "@/components/female_logo"
 import MaleLogo from "@/components/male_logo"
+import { MdiFaceMan } from "./male_icon"
+import { MdiFaceWoman } from "./woman_icon"
 
 export default function GenderSelect({
   textColor,
@@ -32,11 +34,8 @@ export default function GenderSelect({
           ` h-[100px] w-[45%] rounded-2xl flex items-center p-3 gap-3 hover:cursor-pointer`
         }
       >
-        <MaleLogo
-          color={input.gender == 1 ? selectedIconColor : textColor}
-          height="40px"
-          width="40px"
-        />
+        <MdiFaceMan color={input.gender == 1 ? selectedIconColor : textColor} />
+
         <span
           className={
             (input.gender == 1 ? `${selectedTextColor}` : textColor) +
@@ -62,11 +61,10 @@ export default function GenderSelect({
           ` h-[100px] w-[45%] rounded-2xl flex items-center p-3 gap-3 hover:cursor-pointer`
         }
       >
-        <FemaleLogo
+        <MdiFaceWoman
           color={input.gender == 0 ? selectedIconColor : textColor}
-          height="40px"
-          width="40px"
         />
+
         <span
           className={
             (input.gender == 0 ? `${selectedTextColor}` : textColor) +

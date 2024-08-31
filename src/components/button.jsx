@@ -14,7 +14,8 @@ export default function PrimaryButton({
       style={{ width: width, height: height }}
       className={
         (disabled
-          ? "bg-[#C8BCF6]/50 hover:cursor-default"
+          ? (isLightTheme ? "bg-[#9479ff]/50" : "bg-[#C8BCF6]/50") +
+            " bg-[#C8BCF6]/50 hover:cursor-default"
           : "hover:cursor-pointer" +
             (isLightTheme ? " hover:bg-[#ad96ff]" : " hover:bg-[#b5a2ff]")) +
         ` transition-all duration-100 rounded-md flex justify-center text-themesurface items-center font-medium` +

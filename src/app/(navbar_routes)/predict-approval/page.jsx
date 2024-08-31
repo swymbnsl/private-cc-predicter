@@ -3,11 +3,10 @@ import { ThemeContext } from "@/context/theme"
 import React, { useContext, useEffect, useState } from "react"
 import Form from "./components/form"
 import axios from "axios"
-import PredictionGauge from "@/components/prediction_gauge"
-import { DotLottieReact } from "@lottiefiles/dotlottie-react"
-import CountUp from "react-countup"
 import { creditCardApprovalTips } from "@/helpers/tips"
 import { RefreshCcw } from "lucide-react"
+import Result from "./components/result"
+import ProcessInfo from "./components/process_info"
 
 export default function page() {
   const { isLightTheme } = useContext(ThemeContext)
@@ -32,8 +31,7 @@ export default function page() {
   const [probability, setProbability] = useState("")
   const [buttonDisabled, setButtonDisabled] = useState(false)
   const [isPredicting, setIsPredicting] = useState(false)
-  const [refresh, setRefresh] = useState(true)
-  const [randomTips, setRandomTips] = useState(["demo"])
+  const [randomTips, setRandomTips] = useState(["", "", "", "", "", "", ""])
 
   const predictApproval = async () => {
     try {
@@ -74,7 +72,7 @@ export default function page() {
 
   useEffect(() => {
     getRandomTips()
-  }, [refresh])
+  }, [])
 
   useEffect(() => {
     if (
@@ -82,7 +80,7 @@ export default function page() {
       input.totalFamilyMembers &&
       input.workingExperience &&
       input.age &&
-      input.totalBadDebt
+      (input.totalBadDebt || input.totalBadDebt == 0)
     ) {
       setButtonDisabled(false)
     } else {
@@ -113,36 +111,13 @@ export default function page() {
               isLightTheme={isLightTheme}
             />
             <div
-              className={`shadow-black/20 shadow-2xl ${cardBgColor} text-${textColor} rounded-2xl w-full flex flex-col items-center h-full p-5`}
+              className={`shadow-black/20 shadow-2xl ${cardBgColor} text-${textColor} rounded-2xl w-full flex flex-col items-center justify-between h-full p-5`}
             >
-              <span className="text-[25px] font-bold w-full">Results:</span>
-              <div className="h-[220px] flex items-center">
-                <div className="w-[300px] h-[300px] relative">
-                  <div className="absolute top-0 w-full h-full">
-                    <PredictionGauge
-                      color={["#1f1f22"]}
-                      animationDuration={0}
-                      data={[1]}
-                    />
-                  </div>
-                  <div className="absolute top-0 w-full h-full">
-                    <PredictionGauge
-                      color={["#C8BCF6", "rgba(0, 0, 0, 0)"]}
-                      animationDuration={1000}
-                      data={[75, 25]}
-                    />
-                  </div>
-                  <div className="w-full flex flex-col items-center absolute top-[165px]">
-                    <span className="font-bold text-4xl">
-                      <CountUp end={75} duration={1} />%
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <span className="font-bold text-lg text-center text-green-200">
-                Yay!! Based on the data you provided, you have 75% chances of
-                getting your credit card approved 🎉
-              </span>
+              {probability ? (
+                <Result probability={probability} isLightTheme={isLightTheme} />
+              ) : (
+                <ProcessInfo />
+              )}
               <div className="w-full mt-10 flex flex-col gap-2">
                 <div className="w-full flex justify-between">
                   <span className="font-bold text-lg w-full">
