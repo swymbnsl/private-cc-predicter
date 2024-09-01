@@ -2,7 +2,7 @@
 import { ThemeContext } from "@/context/theme"
 import React, { useContext } from "react"
 
-export default function page() {
+export default function Page() {
   const { isLightTheme } = useContext(ThemeContext)
   const textColor = isLightTheme ? "text-black" : "text-white"
 

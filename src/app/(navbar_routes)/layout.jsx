@@ -4,7 +4,7 @@ import React, { useContext } from "react"
 import { ThemeProvider, createTheme } from "@mui/material/styles"
 import { ThemeContext } from "@/context/theme"
 
-export default function layout({ children }) {
+export default function Layout({ children }) {
   const { isLightTheme } = useContext(ThemeContext)
 
   const customColors = {

@@ -8,7 +8,7 @@ import { RefreshCcw } from "lucide-react"
 import Result from "./components/result"
 import ProcessInfo from "./components/process_info"
 
-export default function page() {
+export default function PredictApproval() {
   const { isLightTheme } = useContext(ThemeContext)
   const textColor = isLightTheme ? "black" : "white"
   const cardBgColor = isLightTheme ? "bg-white" : "bg-[#161618]"

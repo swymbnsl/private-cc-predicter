@@ -24,10 +24,11 @@ export default function AboutDeveloper() {
       </div>
       <div className="w-[490px] flex flex-col items-center p-5 gap-5">
         <span className="font-bold text-xl">
-          Hii. I am Anchal Gupta, currently completing my graduation from
-          "Indira Gandhi Delhi Technical University for Women". I am pursuing
-          B.Tech in Information Technology. I am a programming enthusiast and
-          currently do web development and Machine learning with python
+          Hii. I am Anchal Gupta, currently completing my graduation from &quot;
+          Indira Gandhi Delhi Technical University for Women&quot; . I am
+          pursuing B.Tech in Information Technology. I am a programming
+          enthusiast and currently do web development and Machine learning with
+          python
         </span>
       </div>
     </div>
